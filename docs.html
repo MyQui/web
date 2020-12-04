@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MyQui</title>
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="icon" href="./img/favicon.png">
+    </head>
+    <body>
+        <ul>
+            <li>
+                <img href="#" src="./img/MyQui.png" width="78">
+            </li>
+            <li>
+              <a href="../index.html">Home</a>
+          </li>
+            <li>
+                <a href="downloads.html">Downloads</a>
+            </li>
+            <li>
+                <a href="docs.html">Documentation</a>
+            </li>
+            <li>
+                <a href="./stories/feed.html">Stories</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        <h1>MyQui API Documentation</h1>
+        <p>Here you will learn to use our official libraries.</p>
+        <br>
+        <br>
+        <h2>Installation</h2>
+        <a>You can install this NPM using the command: npm install myqui --save. It is recommended to use NodeJS 14.15.1 LTS for this package.</a>
+        <br>
+        <br>
+        <h2>Learning to use methods</h2>
+        <h3>createConnection</h3>
+        <a>createConnection is needed to stablish a connection to make working the database. Also, this will create a .quiconfig.yaml config with some parameters to apply.</a>
+        <br>
+        <br>
+        <div class="codeheader" id="codeheader_js"></div>
+  <div id="codebox">const db = require('myqui')<br>db.createConnection({
+        <br>host: '127.0.0.1', // 127.0.0.1 is the localhost IP, but you can set simply 'localhost' string.
+        <br>port: 25560, // this is the default port for MyQui. You can change it.
+        <br>user: 'root', // root haves all the permissions of the database.
+        <br>pass: 'aidak1234' // intended to login into the database.
+    <br>})</div>
+    <br>
+    <h3>connect</h3>
+    <a>connect() will only work if you used createConnection before.</a>
+  <br>
+  <br>
+  <div class="codeheader" id="codeheader_js"></div>
+  <div id="codebox">db.connect()</div>
+</div>
+<br>
+<br>
+<h3>prepare</h3>
+<a>prepare function is intended to prepare data to later assign changes to the query function.</a>
+<br>
+<br>
+<div class="codeheader" id="codeheader_js"></div>
+<div id="codebox">db.prepare({ db: 'test', key: 'id1', value: 'Jake' })</div>
+<br>
+<br>
+<h3>query</h3>
+<a>query is intended to execute SQL language for creating db files. You need to use prepare first to use query.</a>
+<br>
+<br>
+<div class="codeheader" id="codeheader_js"></div>
+<div id="codebox">//insert<br>db.query('INSERT ON DATABASE test PARAMETERS (id1, Jake)') // previosly used on prepare
+<br>//select<br>db.query('SELECT VALUE FROM DATABASE test WHERE KEY = id1')
+<br>//evaluate result (check if an object exists)<br>db.query('EVALUATE RESULT FROM DATABASE test WHERE KEY = id1')</div>
+<br>
+<br>
+<h3>viewSettings</h3>
+<a>viewSettings allows you to see the current configuration.</a>
+<br>
+<br>
+<div class="codeheader" id="codeheader_js"></div>
+<div id="codebox">db.viewSettings() // returns the content of the current configuration file</div>
+<br>
+<br>
+<div id="footer">
+  <div>
+    <h2>Contact Us</h2>
+    <h3>Discord Server</h3>
+    <a href="https://discord.gg/xyDX57q8Qa">Click to join</a>
+  </div>
+  <div>
+    <h2>Links</h2>
+    <a href="downloads.html">Downloads</a><br>
+    <a href="docs.html">Documentation</a><br>
+    <a href="stories/feed.html">Stories</a><br>
+  </div>
+  </div>
+    </body>
+</html>
